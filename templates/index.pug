@@ -1,0 +1,27 @@
+extends _base
+block head
+	link(rel="stylesheet" href="assets/"+id+"/style.css")
+block body
+	div.navbar
+		img(src="logo-transparent.svg")
+	div.preface
+		h1 Elytra is a group of people that like making cool software.
+		p
+			| Our main mission is to act as an umbrella for a variety of Minecraft-related
+			| projects and to provide shared infrastructure, knowledge, and manpower.
+			br
+			| We foster an inclusive and closely knit community of software developers, modpack
+			| creators, sysadmins, and texture artists.
+	div.stats
+		| We're currently helping with 
+		b= totalProjectCount
+		|  projects, of which 
+		b= metadataProjectCount
+		|  of them have 
+		a(href="https://github.com/elytra/SiteTools") SiteTools
+		|  metadata and are available on this website.
+		br
+		b= jenkinsProjectCount
+		|  of them have Jenkins metadata and are available on 
+		a(href="https://ci.elytradev.com/") our buildserver
+		| .
