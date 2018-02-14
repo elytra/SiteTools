@@ -9,8 +9,8 @@ var fs = require('fs');
 var path = require('path');
 
 // *shrug*
-cp.execSync('rm -rf out tmp');
-//cp.execSync('rm -rf out/*');
+//cp.execSync('rm -rf out tmp');
+cp.execSync('rm -rf out/*');
 cp.execSync('mkdir -p out tmp');
 cp.execSync('cp -r static/* out');
 
@@ -53,7 +53,7 @@ function doClone(json) {
 	var metadataProjectCount = 0;
 	json.forEach((repo) => {
 		console.log("Cloning "+repo.name+"...");
-		cp.spawnSync('git', ['clone', '--depth', '1', repo.clone_url, repo.name], {cwd: 'tmp'});
+		//cp.spawnSync('git', ['clone', '--depth', '1', repo.clone_url, repo.name], {cwd: 'tmp'});
 		totalProjectCount++;
 		var metadir = path.join('tmp', repo.name, '.elytra', 'site');
 		if (fs.existsSync(metadir)) {
